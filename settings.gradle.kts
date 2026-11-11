@@ -25,3 +25,5 @@ plugins {
 }
 
 rootProject.name = "dynamic-island"
+
+includeBuild("build-logic")
