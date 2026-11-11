@@ -27,3 +27,18 @@ plugins {
 rootProject.name = "dynamic-island"
 
 includeBuild("build-logic")
+
+include(":app")
+include(":overlay")
+include(":engine")
+include(":core:model")
+include(":core:common")
+include(":core:data")
+include(":core:permissions")
+include(":core:designsystem")
+include(":feature:notifications")
+include(":feature:media")
+include(":feature:battery")
+include(":feature:timer")
+include(":feature:settings")
+include(":feature:onboarding")

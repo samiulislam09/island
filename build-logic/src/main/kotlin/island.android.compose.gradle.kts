@@ -1,4 +1,5 @@
-import com.android.build.api.dsl.CommonExtension
+import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.api.dsl.LibraryExtension
 
 plugins {
     id("org.jetbrains.kotlin.plugin.compose")
@@ -6,9 +7,15 @@ plugins {
 
 val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
-extensions.configure<CommonExtension<*, *, *, *, *, *>> {
-    buildFeatures {
-        compose = true
+pluginManager.withPlugin("com.android.application") {
+    extensions.configure<ApplicationExtension> {
+        buildFeatures.compose = true
+    }
+}
+
+pluginManager.withPlugin("com.android.library") {
+    extensions.configure<LibraryExtension> {
+        buildFeatures.compose = true
     }
 }
 

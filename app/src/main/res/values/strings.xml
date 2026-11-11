@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Island</string>
+    <string name="btn_grant_permission">Grant Overlay Permission</string>
+    <string name="btn_start_overlay">Start Overlay Service</string>
+    <string name="btn_stop_overlay">Stop Overlay Service</string>
+    <string name="permission_granted">Overlay Permission: GRANTED</string>
+    <string name="permission_denied">Overlay Permission: DENIED</string>
+</resources>
