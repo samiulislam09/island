@@ -6,6 +6,8 @@ plugins {
 
 dependencies {
     implementation(project(":overlay"))
+    implementation(project(":feature:notifications"))
+    implementation(project(":core:designsystem"))
     implementation(project(":core:model"))
     implementation(project(":core:common"))
     implementation(libs.androidx.core.ktx)

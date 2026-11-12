@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Glowing ambient outer halo ring -->
+    <path
+        android:strokeColor="#3300E5FF"
+        android:strokeWidth="5"
+        android:pathData="M54,54m-34,0a34,34 0,1 1,68 0a34,34 0,1 1,-68 0" />
+
+    <!-- Orbital ellipse arc (Cyan) -->
+    <path
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M24,62 C26,44 48,36 68,40 C80,42 86,50 84,58" />
+
+    <!-- Orbital counter arc (Violet) -->
+    <path
+        android:strokeColor="#7C4DFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M84,46 C82,64 60,72 40,68 C28,66 22,58 24,50" />
+
+    <!-- Obsidian Dynamic Island Capsule Pill: 56 wide, 24 high, centered at (54,54) -> x: 26 to 82, y: 42 to 66, radius: 12 -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M38,42 L70,42 A12,12 0,0 1,82 54 A12,12 0,0 1,70 66 L38,66 A12,12 0,0 1,26 54 A12,12 0,0 1,38 42 Z" />
+
+    <!-- Capsule Machined Rim Stroke -->
+    <path
+        android:strokeColor="#4D00E5FF"
+        android:strokeWidth="1.5"
+        android:pathData="M38,42 L70,42 A12,12 0,0 1,82 54 A12,12 0,0 1,70 66 L38,66 A12,12 0,0 1,26 54 A12,12 0,0 1,38 42 Z" />
+
+    <!-- Specular highlight on top rim of capsule -->
+    <path
+        android:strokeColor="#B3FFFFFF"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M37,42.5 L68,42.5" />
+
+    <!-- Punch Hole Camera Lens Outer Halo -->
+    <path
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="1.0"
+        android:pathData="M39,54m-6.5,0a6.5,6.5 0,1 1,13 0a6.5,6.5 0,1 1,-13 0" />
+
+    <!-- Punch Hole Camera Lens Aperture Pupil (Black) -->
+    <path
+        android:fillColor="#050508"
+        android:pathData="M39,54m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0" />
+
+    <!-- Lens Glass Reflection Dot (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M37.5,52.5m-1.2,0a1.2,1.2 0,1 1,2.4 0a1.2,1.2 0,1 1,-2.4 0" />
+
+    <!-- Activity Wave Equalizer Bars on Right Side (69, 54) -->
+    <!-- Bar 1 -->
+    <path
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M64,51 L64,57" />
+    <!-- Bar 2 -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M69,48 L69,60" />
+    <!-- Bar 3 -->
+    <path
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M74,52 L74,56" />
+</vector>

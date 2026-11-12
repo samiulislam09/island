@@ -1,5 +1,7 @@
 package io.selorax.island.overlay
 
+import io.selorax.island.common.compatibility.CutoutType
+
 public data class Rect(public val left: Int, public val top: Int, public val right: Int, public val bottom: Int) {
     public val width: Int get() = right - left
     public val height: Int get() = bottom - top
@@ -51,5 +53,51 @@ public class PositionCalculator {
             height = height,
             isVisible = true
         )
+    }
+
+    public companion object {
+        public data class Coordinates(val x: Int, val y: Int)
+
+        public fun calculate(screenWidth: Int, pillWidth: Int, topOffset: Int): Coordinates {
+            val x = (screenWidth - pillWidth) / 2
+            return Coordinates(x = x.coerceAtLeast(0), y = topOffset)
+        }
+
+        public fun calculateAdaptivePosition(
+            screenWidth: Int,
+            pillWidth: Int,
+            statusBarHeight: Int,
+            cutoutType: CutoutType,
+            cutoutBounds: android.graphics.Rect? = null,
+            paddingPx: Int = 12
+        ): Coordinates {
+            val x = when (cutoutType) {
+                CutoutType.CORNER_PUNCH_LEFT -> {
+                    if (cutoutBounds != null && cutoutBounds.right > 0) {
+                        cutoutBounds.right + paddingPx
+                    } else {
+                        paddingPx
+                    }
+                }
+                CutoutType.CORNER_PUNCH_RIGHT -> {
+                    if (cutoutBounds != null && cutoutBounds.left > 0) {
+                        cutoutBounds.left - pillWidth - paddingPx
+                    } else {
+                        screenWidth - pillWidth - paddingPx
+                    }
+                }
+                CutoutType.CENTER_PUNCH,
+                CutoutType.TEARDROP_NOTCH,
+                CutoutType.PILL_DUAL,
+                CutoutType.UNDER_DISPLAY_OR_NONE -> {
+                    (screenWidth - pillWidth) / 2
+                }
+            }
+
+            return Coordinates(
+                x = x.coerceIn(0, (screenWidth - pillWidth).coerceAtLeast(0)),
+                y = statusBarHeight
+            )
+        }
     }
 }
